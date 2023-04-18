@@ -13,22 +13,22 @@ export default {
     <img :src="cards.card_images[0].image_url_cropped
 " alt="">
 <h4 class="text-center mt-1 p-2">{{ cards.name }}</h4>
-<p class="text-center">{{ cards.type }}</p>
+<p class="text-center">{{ cards.archetype }}</p>
 </div>
 </template>
 
 <style lang="scss" scoped>
 @use "../styles/variables.scss" as *;
 .card-details {
-    height: 250px;
+    height: 200px;
     background-color: $primary;
 }
 img {
-    height: 150px;
+    height: 120px;
     object-fit: cover;
 }
 h4 {
-    font-size: .8rem;
+    font-size: .6rem;
     color: white;
 }
 p {
