@@ -34,6 +34,11 @@ export default {
         this.store.cards = resp.data.data;
         console.log(this.store.cards);
       })
+      .catch(error => {
+        console.log(error);
+      }).finally(() => {
+        this.store.loading = false;
+      })
 
 
     },

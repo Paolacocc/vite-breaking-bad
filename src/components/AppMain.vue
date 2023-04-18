@@ -1,10 +1,12 @@
 <script>
 import AppCard from './AppCard.vue';
 import { store } from "../store"
+import AppLoading from "./AppLoading.vue"
 export default {
     name: "AppMain",
     components: {
-        AppCard
+        AppCard,
+        AppLoading
     },
     data(){
         return  {
@@ -19,7 +21,8 @@ export default {
         <div class="container">
       
             <div class="header-main">Found 20 cards</div>
-            <div class="card-area m-0 p-2 row row-cols-5 g-3 ">
+            <AppLoading v-if="store.loading"/>
+            <div class="card-area m-0 p-2 row row-cols-5 g-3" v-else>
                 
                 <div class="col _ms-col" v-for="card in store.cards" :key="card.id">
                     <AppCard :cards="card"/>
