@@ -23,10 +23,8 @@ export default {
   methods: {
     getCards(){
       this.store.loading = true;
-      const params = {}
-      if(this.store.statusArray) {
-        params.archetype = this.store.statusArray;
-      }
+      
+     
       axios
       .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0", { params: 
         {archetype: this.store.activeStatus

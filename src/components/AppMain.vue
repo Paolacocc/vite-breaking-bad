@@ -23,6 +23,8 @@ export default {
                 
                 <div class="col _ms-col" v-for="card in store.cards" :key="card.id">
                     <AppCard :cards="card"/>
+                   
+
                 </div>
             </div>
 
