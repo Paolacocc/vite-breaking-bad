@@ -28,7 +28,9 @@ export default {
                     <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
             </div>
-            <div class="card-area row row-col-6 g-3">
+            <div class="header-main">Found 20 cards</div>
+            <div class="card-area m-0 p-2 row row-cols-5 g-3">
+                
                 <div class="col" v-for="card in store.cards" :key="card.id">
                     <AppCard :cards="card"/>
                 </div>
@@ -40,19 +42,29 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use "../styles/variables.scss" as *;
 main {
     height: calc(100vh - 80px);
-    background-color: orange;
+    background-color: $primary;
+    .header-main {
+        background-color: black;
+        padding: 10px;
+        color: white;
+
+    }
 
     .container {
+        flex-grow: 1;
+        overflow-y: scroll;
         width: 80%;
-        margin: 0 auto;
+       margin: 0 auto;
 
         .card-area {
+            height: 100%;
+            
+            overflow-y: scroll;
             background-color: white;
-            // debug
-            height: 600px;
-
+           
         }
 
     }

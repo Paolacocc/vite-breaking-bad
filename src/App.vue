@@ -19,7 +19,7 @@ export default {
       .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0")
       .then((resp) => {
         this.store.cards = resp.data.data;
-        console.log(this.store.cards);
+        console.log(this.store.cards[0]);
       })
   }
 
